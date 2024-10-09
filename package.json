@@ -2,7 +2,8 @@
     "name": "software-librarian",
     "displayName": "Software Librarian",
     "description": "Obtain real-time insights on the packages imported in Copilot code completions.",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "icon": "images/worm.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/jaslatendresse/software-librarian-prod"
