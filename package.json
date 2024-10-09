@@ -7,7 +7,7 @@
         "type": "git",
         "url": "https://github.com/jaslatendresse/software-librarian-prod"
     },
-    "publisher": "Jasmine Latendresse",
+    "publisher": "jaslatendresse",
     "engines": {
         "vscode": "^1.53.0"
     },
