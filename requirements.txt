@@ -1,0 +1,4 @@
+vscode.py==2.0.0b2
+pandas==2.2.2
+Requests==2.32.3
+stdlib_list==0.10.0

@@ -1,0 +1,99 @@
+{
+    "name": "software-librarian",
+    "displayName": "Software Librarian",
+    "description": "Obtain real-time insights on the packages imported in Copilot code completions.",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jaslatendresse/software-librarian-prod"
+    },
+    "publisher": "Jasmine Latendresse",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "activationEvents": [
+        "onExtension:github.copilot",
+        "onExtension:github.copilot-chat"
+    ],
+    "main": "./src/extension.js",
+    "extensionDependencies": [
+        "ms-python.python"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "pythonAnalyzer.setApiKey",
+                "title": "Set API Key"
+            },
+            {
+                "command": "pythonAnalyzer.analyzeCode",
+                "title": "Analyze Python Code"
+            },
+            {
+                "command": "pythonAnalyzer.removeResult",
+                "title": "Clear"
+            },
+            {
+                "command": "pythonAnalyzer.removeAllResults",
+                "title": "Clear All"
+            },
+            {
+                "command": "pythonAnalyzer.downloadJsonSingle",
+                "title": "Download"
+            },
+            {
+                "command": "pythonAnalyzer.downloadJsonAll",
+                "title": "Download All"
+            }
+        ],
+        "menus": {
+            "view/item/context": [
+                {
+                    "command": "pythonAnalyzer.removeResult",
+                    "when": "view == pythonAnalyzerView && viewItem == library",
+                    "group": "inline"
+                },
+                {
+                    "command": "pythonAnalyzer.downloadJsonSingle",
+                    "when": "view == pythonAnalyzerView && viewItem == library",
+                    "group": "inline"
+                }
+            ],
+            "view/title": [
+                {
+                    "command": "pythonAnalyzer.downloadJsonAll",
+                    "when": "view == pythonAnalyzerView",
+                    "group": "navigation"
+                },
+                {
+                    "command": "pythonAnalyzer.removeAllResults",
+                    "when": "view == pythonAnalyzerView",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "pythonAnalyzerContainer",
+                    "title": "Software Librarian",
+                    "icon": "images/logo.svg"
+                }
+            ]
+        },
+        "views": {
+            "pythonAnalyzerContainer": [
+                {
+                    "id": "pythonAnalyzerView",
+                    "name": "Results"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "pip install -r requirements.txt"
+    },
+    "dependencies": {
+        "fs": "0.0.1-security"
+    }
+}
