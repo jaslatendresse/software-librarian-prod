@@ -4,7 +4,7 @@ import pandas as pd
 
 class PackageModuleLookup:
     def __init__(self, csv_file):
-        self.package_data = pd.read_csv(csv_file)
+        self.package_data = pd.read_csv(csv_file, on_bad_lines='skip')
         self.module_to_packages = self._create_module_mapping()
 
     def _create_module_mapping(self):
