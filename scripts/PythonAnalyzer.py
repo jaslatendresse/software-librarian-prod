@@ -157,7 +157,7 @@ class PythonAnalyzer:
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
-        print("Insufficient arguments. Expected: code_snippet, packages_imports_file, packages_modules_file.")
+        print("Insufficient arguments. Expected: code_snippet, packages_imports_file, packages_modules_file.", file=sys.stderr)
         sys.exit(1)
 
     input_code_snippet = sys.argv[1]
